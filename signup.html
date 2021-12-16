@@ -1,0 +1,405 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+
+  <!-- MDB -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet"/> -->
+
+  <!-- Google Fonts - Monserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!--Splide styles-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css"/>
+
+  <!-- Local styles -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/signup.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+  <!-- Mobile -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#" class="span-redpuma-mobile">REDPUMA</a>
+    <a href="#">Inicio de Sesión</a>
+    <a href="#">Registro</a>
+  </div>
+  
+  <div id="main">
+    <div class="container-burguer-span" onclick="openNav()">
+      <span class="span-hamburger"></span>
+      <span class="span-hamburger"></span>
+      <span class="span-hamburger"></span>  
+    </div>
+  </div>
+
+  <div id="offcanvasBackdrop" class="offcanvas-backdrop"></div>
+
+
+  <div class="h-100 d-flex flex-column">
+    <div>
+
+      <div class="site-container-mobile d-block d-sm-block d-md-none">
+          <div class="row col-12 pt-4 pb-4 m-0">
+            <div class="col-6 text-center">
+              <img class="university-logo" src="img/ESCUDO_UNAM_AZUL.png" alt="Escudo de la UNAM">
+            </div>
+            <div class="col-6 text-center">
+              <img class="deporte-logo" src="img/DEPORTE_UNAM.png" alt="Logo de Deporte UNAM">
+            </div>
+          </div>
+      </div>
+
+      <div class="site-container d-none d-md-block">
+        <div class="row">
+          
+          <div class="row col-xxl-7 col-xl-7 col-lg-7 col-md-6 align-items-center pt-4 pb-4">
+            <div class="col-2">
+              <img class="university-logo" src="img/ESCUDO_UNAM_AZUL.png" alt="Escudo de la UNAM">
+            </div>
+            
+            <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10 names-container">
+              <p class="university-name">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</p>
+              <p class="department-name">DIRECCIÓN GENERAL DEL DEPORTE UNIVERSITARIO</p>
+            </div>
+          </div>
+
+          <div class="row col-xxl-5 col-xl-5 col-lg-5 col-md-6 align-items-center">
+            <div class="col-8 text-center">
+              <img class="redpuma-logo" src="img/REDPUMA21.png" alt="Logo de RedPuma">
+            </div>
+            <div class="col-4">
+              <img class="deporte-logo" src="img/DEPORTE_UNAM.png" alt="Logo de Deporte UNAM">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div>
+      <div class="row rows-container">
+        <!--<div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1"></div>-->
+        
+        <!-- https://www.the-art-of-web.com/html/input-field-uppercase/ -->
+        <div class="col-xxl-10 col-xl-10 col-lg-11 col-md-11 col-sm-11 col-container">
+          <div class="card border-card card-shadow">
+            <div class="card-body text-center card-padding-left">
+              <div class="card-title-login">
+                <span>REGISTRO EN REDPUMA</span>
+              </div>
+              <hr class="hr-color">
+
+              <div class="col-12 signup-span-error" id="signupSpanError">
+                <span>Debes completar todos los campos</span>
+              </div>
+
+              <form class="login-form" id="signupForm" autocomplete="nope" onsubmit="event.preventDefault(); checkForm();">
+                
+                <div class="row col-12">
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 name-field row-padding">
+                    <label for="inputName" class="form-label form-title">NOMBRES</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="text" class="form-control form-control-correct" id="inputName" required placeholder="Nombres sin acentos">
+                      </div>
+                    </div>
+                    <!--
+                    <div class="col-12 signup-span-error-field">
+                      <span>El nombre no debe contener acentos</span>
+                    </div>
+                    -->
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 gender-field">
+                    <label for="selectGender" id="labelInputGenderSignup" class="form-label form-title">GÉNERO</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <select class="form-select" id="selectGender" required aria-label="Gender Selection">
+                          <option selected disabled class="form-select-option">Seleccionar...</option>
+                          <option value="Hombre" class="form-select-option">Hombre</option>
+                          <option value="Mujer" class="form-select-option">Mujer</option>
+                        </select>
+                      </div>
+                      <div class="col-12 signup-span-error-field" id="signupSpanGenderError">
+                        <span>El género elegido no es una opción</span>
+                      </div>
+                    </div>
+                    <!--
+                    <div class="col-12 signup-span-error-field">
+                      <span>Debes elegir una opción</span>
+                    </div>
+                    -->
+                  </div>
+
+                </div>
+
+
+                <div class="row col-12 row-padding">
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 first-surname-field">
+                    <label for="inputFirstSurname" class="form-label form-title">PRIMER APELLIDO</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="text" class="form-control form-control-correct" id="inputFirstSurname" required placeholder="Apellido sin acentos">
+                      </div>
+                    </div>
+                    <!--
+                    <div class="col-12 signup-span-error-field">
+                      <span>El apellido no debe contener acentos</span>
+                    </div>
+                    -->
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 curp-field">
+                    <label for="inputCurp" id="labelInputCurpSignup" class="form-label form-title">CURP</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="text" class="form-control form-control-correct" id="inputCurp" autocomplete="nope" required placeholder="18 Caracteres">
+                      </div>
+                    </div>
+                    <div class="col-12 signup-span-error-field" id="signupSpanCurpError">
+                      <span>El formato del CURP es incorrecto</span>
+                    </div>
+                  </div>
+
+                </div>
+
+
+                <div class="row col-12 row-padding">
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 second-surname-field">
+                    <label for="inputSecondSurname" class="form-label form-title">SEGUNDO APELLIDO</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="text" class="form-control form-control-correct" id="inputSecondSurname" placeholder="En blanco si no existe">
+                      </div>
+                    </div>
+                    <!--
+                    <div class="col-12 signup-span-error-field">
+                      <span>El apellido no debe contener acentos</span>
+                    </div>
+                    -->
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 user-field">
+                    <label for="selectUser" id="labelInputUserSignup" class="form-label form-title">TIPO DE USUARIO</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <select class="form-select" id="selectUser" required aria-label="User Selection">
+                          <option selected disabled class="form-select-option">Seleccionar...</option>
+                          <option value="Externo" class="form-select-option">Externo</option>
+                          <option disabled class="form-select-option">Estudiantes</option>
+                          <option value="Bachillerato" class="form-select-option">Bachillerato</option>
+                          <option value="Licenciatura" class="form-select-option">Licenciatura</option>
+                          <option value="Posgrado" class="form-select-option">Posgrado</option>
+                          <option value="Egresado" class="form-select-option">Egresado</option>
+                          <option value="Intercambio" class="form-select-option">Intercambio</option>
+                          <option value="Escuela incorporada a la UNAM" class="form-select-option">Escuela incorporada a la UNAM</option>
+                          <option disabled class="form-select-option">Trabajadores</option>
+                          <option value="Académico" class="form-select-option">Académico</option>
+                          <option value="Administrativo" class="form-select-option">Administrativo</option>
+                          <option value="Confianza" class="form-select-option">Confianza</option>
+                          <option value="Familiar de trabajador Académico" class="form-select-option">Familiar de trabajador Académico</option>
+                          <option value="Familiar de trabajador Administrativo" class="form-select-option">Familiar de trabajador Administrativo</option>
+                          <option value="Familiar de trabajador Confianza" class="form-select-option">Familiar de trabajador Confianza</option>
+                        </select>
+                      </div>
+                      <div class="col-12 signup-span-error-field" id="signupSpanUserError">
+                        <span>El tipo de usuario elegido no es una opción</span>
+                      </div>
+                    </div>
+                    <!--
+                    <div class="col-12 signup-span-error-field">
+                      <span>Debes elegir una opción</span>
+                    </div>
+                    -->
+                  </div>
+
+                </div>
+
+
+                <div class="row col-12 row-padding">
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 date-field">
+                    <label for="inputDate" id="labelInputDateSignup" class="form-label form-title">FECHA DE NACIMIENTO</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="date" placeholder="dd/mm/yyyy" autocomplete="nope" class="form-control form-control-correct form-select-date" required id="inputDate">
+                      </div>
+                    </div>
+                    <div class="col-12 signup-span-error-field" id="signupSpanDateError">
+                      <span>El formato de la fecha es incorrecto</span>
+                    </div>
+                  </div>
+
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-3 email-field">
+                    <label for="inputEmailSignup" id="labelInputEmailSignup" class="form-label form-title">CORREO ELECTRÓNICO</label>
+                    <div class="row">
+                      <div class="col-12">
+                        <input type="email" class="form-control form-control-correct" id="inputEmailSignup" autocomplete="nope" required placeholder="Correo personal y vigente">
+                      </div>
+                    </div>
+                    <div class="col-12 signup-span-error-field" id="signupSpanEmailError">
+                      <span>No es un correo electrónico válido</span>
+                    </div>
+                  </div>
+
+                </div>
+                
+                <div class="row col-12 justify-content-center row-padding">
+                  <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-9 col-10">
+                    <input type="submit" value="ENVIAR" class="btn submit-button"></input>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1"></div>-->
+      </div>
+
+
+
+      <div class="col-12 text-center tutorial-section">
+        <div class="tutorial-title">
+          <h3 class="header-tutorials">TUTORIALES</h3>
+        </div>
+        
+        <div class="tutorial-subtitle">
+          <h4 class="second-header-tutorials">SI TIENES DUDAS CON EL REGISTRO, CONSULTA LOS TUTORIALES</h4>
+        </div>
+
+
+        <div class="col-12">
+          <div class="col-11 splide-container">
+            <div class="splide">
+              <div class="splide__track">
+                  <ul class="splide__list">
+                
+                    <li class="splide__slide">
+                      <div class="splide__slide__container">
+                        <div class="slide__content">
+                          <iframe class="yt-video" src="https://www.youtube.com/embed/VUl2xSoJwhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    <li class="splide__slide">
+                      <div class="splide__slide__container">
+                        <div class="slide__content">
+                          <iframe class="yt-video" src="https://www.youtube.com/embed/h5PDWkaPt6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="splide__slide">
+                      <div class="splide__slide__container">
+                        <div class="slide__content">
+                          <iframe class="yt-video" src="https://www.youtube.com/embed/MWuKfUC60cE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    <li class="splide__slide">
+                      <div class="splide__slide__container">
+                        <div class="slide__content">
+                          <iframe class="yt-video" src="https://www.youtube.com/embed/pjirX3cwqlQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="splide__slide">
+                      <div class="splide__slide__container">
+                        <div class="slide__content">
+                          <iframe class="yt-video" src="https://www.youtube.com/embed/7oOzxDvls3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="splide__slide">
+                      <div class="splide__slide__container">
+                        <div class="slide__content">
+                          <iframe class="yt-video" src="https://www.youtube.com/embed/h5PDWkaPt6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </li>
+                    
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <footer class="col-12 footer">
+        <span class="span-footer">Dirección General del Deporte Universitario &copy; 2021</span>
+        <a href="https://redpuma.unam.mx/registro/Soporte.aspx" class="link-footer">Ayuda y soporte</a>
+        <a href="https://redpuma.unam.mx/registro/GuiaExtranjeros.PDF" class="link-footer">Guía para extranjeros</a>
+        <a href="http://consultas.curp.gob.mx/CurpSP/" class="link-footer">Consulta tu CURP</a>
+        <span class="span-footer-mobile">Dirección General del Deporte Universitario &copy; 2021</span>
+      </footer>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- Bootstrap 5 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <!-- MDB -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"></script> -->
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/signup.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+</body>
+
+</html>

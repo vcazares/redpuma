@@ -1,0 +1,432 @@
+body{
+    background: #DAE5FB;
+    background: linear-gradient(rgb(218,229,251,1), rgb(255,255,255,1));
+    height: 100%;
+    transition: background-color .5s; /*Needed for the overlay*/
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.col-container{
+    margin: 0 auto; /*The form is centered*/
+}
+
+/*Form*/
+
+.login-form{
+    padding-top: 1.2rem;
+}
+
+.card{
+    background: #FFFFFF;
+}
+
+.card-shadow{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card-padding-left{
+    padding-left: 2.5rem;
+}
+
+.card-title-login{
+    color: #3B55E6;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: -1.5rem;
+}
+
+
+.hr-color{
+    color: #FFFFFF;
+    background-color: #FFFFFF; /*Firefox, Opera*/
+}
+
+.rows-container{
+    margin-top: 2rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+
+@media (min-width: 768px){
+    .rows-container{
+        margin-top: 2rem;
+        margin-left: 6rem;
+        margin-right: 6rem;
+    } 
+}
+
+.form-title{
+    color: #3B55E6;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+
+.form-select, .form-select-option, .form-select-date{
+    color: #3B55E6;
+}
+
+.email-field, .name-field, .gender-field, .first-surname-field, .curp-field, .second-surname-field, .user-field, .date-field{
+    text-align: left;
+}
+
+.password-field{
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+}
+
+.row-padding{
+    padding-bottom: 0rem;
+}
+
+#inputEmail, #inputName, #selectGender, #inputFirstSurname, #inputCurp, #inputSecondSurname, #selectUser, #inputDate, #inputEmailSignup{
+    padding-left: 2rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    background-color: #F0F2F7;
+    border-color: #F0F2F7;
+    color:#3B55E6;
+}
+
+/*The input gets transformed to uppercase but the placeholder is not affected*/
+#inputName, #inputFirstSurname, #inputCurp, #inputSecondSurname { 
+    text-transform: uppercase;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    text-transform: none;
+}
+::placeholder { /* Recent browsers */
+    text-transform: none;
+}
+
+.form-control-correct::-webkit-input-placeholder {
+    color:#3B55E6;
+    font-weight: 400;
+}
+
+.form-control-error::-webkit-input-placeholder{
+    color: #FF0033;
+    font-weight: 400;
+}
+
+
+.signup-span-error{
+    color: #FF0033;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 0rem;
+    padding-top: 0.2rem;
+    margin-left: -1.5rem;
+    display: none;
+}
+
+.signup-span-error-field{
+    color: #FF0033;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 0rem;
+    padding-top: 0.2rem;
+}
+
+#signupSpanEmailError, #signupSpanDateError, #signupSpanCurpError, #signupSpanGenderError, #signupSpanUserError{
+    display: none;
+    transition: all ease-in-out 0.2s;
+}
+
+.form-control-correct{
+    border-radius: 12px;
+}
+
+.form-control-error{
+    border-radius: 12px;
+}
+
+.link-forgot-password{
+    text-decoration: none;
+    color:#3B55E6;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.link-forgot-password:hover{
+    color:#6074e6;
+}
+
+.submit-button{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    color: #fff;
+    background-color: #3B55E6;
+    border-color: #3B55E6;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px){
+    .submit-button{
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+    } 
+}
+
+
+.submit-button:hover{
+    color: #3B55E6;
+    background-color: transparent;
+    border-color: #3B55E6;
+}
+
+
+.container-link-signup{
+    padding-bottom: 2rem;
+}
+
+.link-signup{
+    font-weight: 700;
+    color:#3B55E6;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.link-signup:hover{
+    color:#6074e6;
+}
+
+
+/*Tutorials*/
+.tutorial-section{
+    margin-top: 4rem;
+}
+
+.tutorial-title{
+    padding-bottom: 1rem;
+}
+
+.tutorial-subtitle{
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+}
+
+.header-tutorials{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.second-header-tutorials{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+
+/*Splide*/
+.splide-container{
+    margin: 0 auto;
+    height: 20rem;
+}
+
+@media (min-width:768px){
+    .splide-container{
+        height: 20rem;
+    }
+}
+
+@media (min-width:1200px){
+    .splide-container{
+        height: 20rem;
+    }
+}
+
+.yt-video{
+    width: 100%;
+    height: 100%;
+}
+
+.splide{
+    height: 100%;
+}
+
+.splide__slide{
+    padding: 0rem 1rem;
+    display: flex;
+    justify-content: center;
+    background: transparent ;
+    height: 100%;
+  }
+
+  .splide__track{
+      height: 100%;
+  }
+
+  .splide__list{
+      height: 100%;
+  }
+
+  .splide__slide__container{
+    width: 600px;
+    text-align: center;
+  }
+
+  .slide__content{
+  margin: 0rem 0;
+  font-size: 1.3rem;
+  height: 100%;
+  }
+
+  .slide-img__wrapper{
+    display: flex;
+    align-items: center;
+
+  }
+
+  .slide-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .slide-img__caption{
+    margin-left: 1rem;
+  }
+
+  .slide-img__caption span{
+    color: #2E86C1 ;
+    font-weight: 500;
+  }
+
+  .splide__pagination { visibility: hidden; }
+  
+  
+  .splide__arrow--prev{
+    background: transparent;
+    margin-left: -2rem;
+  }
+
+  @media (min-width: 768px){
+    .splide__arrow--prev{
+        background: transparent;
+        margin-left: -3rem;
+      }
+  }
+
+  .splide__arrow--next{
+    background: transparent;
+    margin-right: -2rem;
+  }
+
+  @media (min-width: 768px){
+    .splide__arrow--next{
+        background: transparent;
+        margin-right: -3rem;
+      } 
+}
+
+  .splide__arrow{
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .splide__arrow svg{
+    width: 2rem;
+    height: 2rem;
+  }
+
+
+/*Footer*/
+.footer{
+    position: unset;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 1.2rem;
+}
+
+.span-footer{
+    color: #000000;
+    display: none;
+    padding-right: 2.5rem;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 1100px){
+    .span-footer{
+        display: block;
+    }
+}
+
+@media (min-width: 1100px){
+    .span-footer{
+        display: inline;
+        font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1200px){
+    .span-footer{
+        font-size: 1.2rem;
+    }
+  }
+
+.span-footer-mobile{
+    color: #000000;
+    display: block;
+    padding-right: 0rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 1100px){
+    .span-footer-mobile{
+        display: none;
+        padding-right: 2.5rem;
+    }
+}
+
+.link-footer{
+    color: #000000;
+    padding-right: 0;
+    font-size: 1.2rem;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .link-footer:hover{
+    cursor: pointer;
+    color: #AAA;
+  }
+  
+  @media (min-width: 1100px){
+    .link-footer{
+        display: inline;
+        font-size: 1rem;
+        padding-right: 2.5rem;
+    }
+  }
+  
+  @media (min-width: 1200px){
+    .link-footer{
+        font-size: 1.2rem;
+    }
+  }
+
+

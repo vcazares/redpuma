@@ -1,0 +1,453 @@
+body{ /*The mobile site takes the needed height*/
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(rgb(218,229,251,1), rgb(255,255,255,1));
+}
+
+@media (min-width: 768px){
+    body{
+        background: transparent;
+    }
+}
+
+@media (min-width: 768px){ /*Tablets and desktop take only the viewport height*/
+    body{
+        height: 100vh;
+    }
+}
+
+.blue-background{
+    background-color: transparent;
+}
+
+@media (min-width: 768px){
+    .blue-background{
+        background-color: #DAE5FB;
+    }
+}
+
+
+/*Form*/
+.background-overlay{
+    background: transparent;
+}
+
+
+/*Include -webkit-animation, -moz-animation, -o-animation and the same for the keyframes*/
+@media (min-width: 768px){
+    @keyframes animatedBackground {
+        from {
+          background-position: center center;
+        }
+        to {
+          background-position: bottom;
+        }
+      }
+    .background-overlay{
+        background: linear-gradient(rgb(0,0,0,0.7), rgb(0,0,0,0.7)), url("../img/TaeKwonDo.jpg");
+        /*box-shadow:inset 0 0 0 2000px rgba(0,0,0, 0.7);*/
+        box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.7);
+        background-size: cover;
+        background-position: center center;
+        position: relative; /*Needed to place the footer at the bottom of the screen*/
+        animation: animatedBackground 15s linear infinite alternate;
+        transition: background 5s;
+    }
+}
+
+
+.form-cols{
+    margin: 0 auto;
+}
+
+@media (min-width:768px){
+    .form-cols{
+        margin: unset;
+    }
+}
+
+@media (min-width:1400px){
+    .form-cols{
+        padding-left: 5rem;
+        padding-left: 4rem;
+    }
+}
+
+.login-form{
+    padding-top: 1.2rem;
+}
+
+.card{
+    background: #FFFFFF;
+}
+
+@media (min-width:768px){
+    .card{
+        background: linear-gradient(rgb(255,255,255,0.65), rgb(255,255,255,0.65));
+    }
+}
+
+.card-shadow{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card-title-login{
+    color: #3B55E6;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.hr-color{
+    color: #FFFFFF;
+    background-color: #FFFFFF; /*Firefox, Opera*/
+}
+
+.rows-container{
+    margin-top: 3.5rem;
+    margin-right: 0rem;
+}
+
+@media (min-width: 768px){
+    .rows-container{
+        margin-top: 3.5rem;
+        margin-right: 8rem;
+    }
+}
+
+.form-title{
+    color: #3B55E6;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+}
+
+.email-field{
+    text-align: left;
+}
+
+.password-field{
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+}
+
+#inputEmail{
+    position: relative;
+    padding-left: 5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    background-color: #F0F2F7;
+    border-color: #F0F2F7;
+    color: #3B55E6;
+    transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 768px){
+    #inputEmail{
+        padding-left: 7rem;
+    }
+}
+
+#inputPassword{
+    position: relative;
+    padding-left: 5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-right: 3rem;
+    background-color: #F0F2F7;
+    border-color: #F0F2F7;
+    color: #3B55E6;
+    transition: all 0.2s ease-in-out;
+}
+
+@media (min-width: 768px){
+    #inputPassword{
+        padding-left: 7rem;
+        padding-right: 4rem;
+    }
+}
+
+#envelope-icon{
+    position: absolute;
+    left: 20px;
+    margin-top: 0.675rem;
+    margin-left: 2rem;
+    z-index: 2;
+    font-size: 1.5rem;
+    color: #3B55E6;
+    transition: color 0.2s ease-in-out;
+}
+
+#lock-icon{
+    position: absolute;
+    left: 20px;
+    margin-top: 0.675rem;
+    margin-left: 2rem;
+    z-index: 2;
+    font-size: 1.5rem;
+    color:#3B55E6;
+    transition: 0.2s ease-in-out;
+}
+
+#eye-icon{
+    position: absolute;
+    right: 0px;
+    margin-top: 0.675rem;
+    margin-right: 2rem;
+    z-index: 2;
+    font-size: 1.5rem;
+    color:#3B55E6;
+    cursor: pointer;
+}
+
+#eye-slash-icon{
+    position: absolute;
+    right: 0px;
+    margin-top: 0.675rem;
+    margin-right: 1.90rem;
+    z-index: 2;
+    font-size: 1.5rem;
+    color:#3B55E6;
+    cursor: pointer;
+    display: none;
+}
+
+/*Hides the default eye in password inputs*/
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear
+{
+    display: none;
+}
+
+.form-control::-webkit-input-placeholder {
+    color:#3B55E6;
+    font-weight: 400;
+}
+
+.login-span-error{
+    color: #FF0033;
+    font-size: 0.9rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    cursor: default;
+}
+
+@media (min-width:576px){
+    .login-span-error{
+        font-size: 1.1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.login-span-error-field{
+    color: #FF0033;
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    padding-right: 0rem;
+    padding-top: 0.2rem;
+    cursor: default;
+}
+
+@media (min-width:576px){
+    .login-span-error-field{
+        font-size: 1rem;
+    }
+}
+
+#labelInputEmailLogin{
+    transition: color 0.2s ease-in-out;
+}
+
+#labelInputPasswordLogin{
+    transition: 0.2s ease-in-out;
+}
+
+#loginSpanErrorEmail{
+    color: transparent;
+    transition: color 0.2s ease-in-out;
+}
+
+#loginSpanErrorCheck{
+    color: transparent;
+    transition: color 0.2s ease-in-out;
+}
+
+.form-control{
+    border-radius: 12px;
+}
+
+.link-forgot-password{
+    text-decoration: none;
+    color:#3B55E6;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.link-forgot-password:hover{
+    color:#6074e6;
+}
+
+
+.button-container{
+    margin: 0!important;
+}
+
+@media (min-width: 768px){
+    .button-container{
+        margin: unset;
+    }
+}
+
+.submit-button{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    color: #fff;
+    background-color: #3B55E6;
+    border-color: #3B55E6;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px){
+    .submit-button{
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+    } 
+}
+
+.submit-button:hover{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3B55E6;
+    background-color: transparent;
+    border-color: #3B55E6;
+}
+
+
+.container-link-signup{
+    padding-bottom: 2rem;
+}
+
+.link-signup{
+    font-weight: 700;
+    color:#3B55E6;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.link-signup:hover{
+    color:#6074e6;
+}
+
+
+/*Footer*/
+
+.footer{
+    position: unset;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+@media (min-width: 768px){
+    .footer{
+        position: unset;
+        bottom: 0rem;
+        text-align: center;
+      }
+}
+
+@media (min-width: 768px) and (min-height: 992px){
+    .footer{
+        position: absolute;
+        bottom: 1rem;
+        text-align: center;
+      }
+}
+  
+  .span-footer{
+    padding-right: 2.5rem;
+    display: none;
+    font-size: 1.2rem;
+  }
+  
+  @media (min-width: 1100px){
+    .span-footer{
+        color: #FFFFFF;
+        display: inline;
+        font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1200px){
+    .span-footer{
+        font-size: 1.2rem;
+    }
+  }
+
+  .span-footer-mobile{
+    color: #000000;
+    display: block;
+    padding-right: 0rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px){
+    .span-footer-mobile{
+        color: #FFFFFF;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1100px){
+    .span-footer-mobile{
+        display: none;
+        padding-right: 2.5rem;
+    }
+}
+  
+  .link-footer{
+    color: #000000;
+    font-size: 1.2rem;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  @media (min-width:768px){
+    .link-footer{
+        color: #FFFFFF;
+        padding-right: 2.5rem;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+      } 
+  }
+  
+  .link-footer:hover{
+    cursor: pointer;
+    color: #AAA;
+  }
+  
+  @media (min-width: 1100px){
+    .link-footer{
+        display: inline;
+        font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1200px){
+    .link-footer{
+        font-size: 1.2rem;
+    }
+  }
